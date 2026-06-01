@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist && tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "dev": "bun run build && bun --watch dev-server.ts",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "lint": "prettier --write .",
     "prepare": "husky || true",
@@ -66,6 +67,7 @@
     "got-scraping": "^3.2.13",
     "husky": "^9.1.1",
     "node-fetch": "^2.7.0",
+    "tsc": "^2.0.4",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
@@ -85,7 +87,7 @@
     "rimraf": "^6.0.1",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^6.0.3"
   },
   "auto-changelog": {
     "template": "keepachangelog",
